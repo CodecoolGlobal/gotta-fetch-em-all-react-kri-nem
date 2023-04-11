@@ -4,17 +4,24 @@ import World from './components/World'
 import Location from './components/Location'
 import Encounter from './components/Encounter'
 
-function handleLocationSelect () {
-}
-
-function handleOwnPokemonSelect () {
-}
-
-function handleEncounterEnd () {
-}
-
 function App () {
   const [displayedComponent, setDisplayedComponent] = useState('World')
+
+  const userPokemons = [
+    'https://pokeapi.co/api/v2/pokemon/bulbasaur',
+    'https://pokeapi.co/api/v2/pokemon/charizard',
+    'https://pokeapi.co/api/v2/pokemon/poliwhirl'
+  ]
+
+  function handleLocationSelect () {
+  }
+
+  function handleOwnPokemonSelect () {
+  }
+
+  function handleEncounterEnd () {
+  }
+
   return (
     <div className="App">
       {displayedComponent === 'Locations'
