@@ -24,13 +24,14 @@ function App () {
 
   return (
     <div className="App">
-      {displayedComponent === 'Locations'
-        ? <World onLocationSelect={handleLocationSelect}/>
-        : displayedComponent === 'Location'
-          ? <Location onOwnPokemonSelect={handleOwnPokemonSelect}/>
-          : displayedComponent === 'Encounter'
-            ? <Encounter onEncounterEnd={handleEncounterEnd}/>
-            : null
+      {//displayedComponent === 'World'
+        //?
+         <World onLocationSelect={handleLocationSelect}/>
+        // : displayedComponent === 'Location'
+        //   ? <Location onOwnPokemonSelect={handleOwnPokemonSelect}/>
+        //   : displayedComponent === 'Encounter'
+        //     ? <Encounter onEncounterEnd={handleEncounterEnd}/>
+        //     : null
       }
     </div>
   )
