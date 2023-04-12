@@ -6,6 +6,9 @@ import Encounter from './components/Encounter'
 
 function App () {
   const [displayedComponent, setDisplayedComponent] = useState('World')
+  const [selectedLocationUrl, setSelectedLocationUrl] = useState('')
+  const [selectedPokemomonUrl, setSelectedPokemonUrl] = useState('')
+  const [encounteredPokemonUrl, setEncounteredPokemonUrl] = useState('')
 
   const [userPokemons, setUserPokemons] = useState([
     'https://pokeapi.co/api/v2/pokemon/bulbasaur',
@@ -13,10 +16,13 @@ function App () {
     'https://pokeapi.co/api/v2/pokemon/poliwhirl'
   ])
 
-  function handleLocationSelect () {
+  function handleLocationSelect (url) {
+    setSelectedLocationUrl(url)
   }
 
-  function handleOwnPokemonSelect () {
+  function handlePokemonSelect (selectedUrl, encounteredUrl) {
+    setSelectedPokemonUrl(selectedUrl)
+    setEncounteredPokemonUrl(encounteredUrl)
   }
 
   function handleEncounterEnd (pokeUrl) {
@@ -25,14 +31,22 @@ function App () {
 
   let activeComponent
   if (displayedComponent === 'World') {
-    activeComponent = <World onLocationSelect={handleLocationSelect}/>
+    activeComponent =
+      <World
+        onLocationSelect={handleLocationSelect}
+      />
   } else if (displayedComponent === 'Location') {
-    <Location onOwnPokemonSelect={handleOwnPokemonSelect}/>
+    activeComponent =
+      <Location
+        onOwnPokemonSelect={handlePokemonSelect}
+      />
   } else if (displayedComponent === 'Encounter') {
-    <Encounter
-      onEncounterEnd={handleEncounterEnd}
-      selectedPokemonUrl="https://pokeapi.co/api/v2/pokemon/bulbasaur"
-      encounteredPokemonUrl="https://pokeapi.co/api/v2/pokemon/poliwhirl"/>
+    activeComponent =
+      <Encounter
+        onEncounterEnd={handleEncounterEnd}
+        selectedPokemonUrl="https://pokeapi.co/api/v2/pokemon/bulbasaur"
+        encounteredPokemonUrl="https://pokeapi.co/api/v2/pokemon/poliwhirl"
+      />
   }
 
   return (
