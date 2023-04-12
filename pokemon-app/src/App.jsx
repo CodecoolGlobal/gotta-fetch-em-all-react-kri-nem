@@ -24,7 +24,7 @@ function App () {
 
   return (
     <div className="App">
-      {displayedComponent === 'Locations'
+      {displayedComponent === 'World'
         ? <World onLocationSelect={handleLocationSelect}/>
         : displayedComponent === 'Location'
           ? <Location onOwnPokemonSelect={handleOwnPokemonSelect}/>
