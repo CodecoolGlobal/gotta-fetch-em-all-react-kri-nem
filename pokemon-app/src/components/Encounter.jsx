@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
+import { useImmer } from 'use-immer'
 
 function Encounter ({ onEncounterEnd, selectedPokemonUrl, encounteredPokemonUrl }) {
-  const [selectedPokemomon, setSelectedPokemon] = useState(null)
-  const [encounteredPokemon, setEncounteredPokemon] = useState(null)
-  const [attacker, setAttacker] = useState(selectedPokemomon)
+  const [ownPokemon, setOwnPokemon] = useImmer({})
+  const [encounteredPokemon, setEncounteredPokemon] = useImmer({})
+  const [attacker, setAttacker] = useState(null)
 
   useEffect(() => {
     Promise.all([
@@ -12,8 +13,9 @@ function Encounter ({ onEncounterEnd, selectedPokemonUrl, encounteredPokemonUrl 
     ])
       .then((res) => Promise.all(res.map(r => r.json())))
       .then((data) => {
-        setSelectedPokemon(data[0])
+        setOwnPokemon(data[0])
         setEncounteredPokemon(data[1])
+        setAttacker(data[0])
       })
   }, [selectedPokemonUrl, encounteredPokemonUrl])
 
@@ -29,15 +31,19 @@ function Encounter ({ onEncounterEnd, selectedPokemonUrl, encounteredPokemonUrl 
     })()
   ) => ((((2 / 5 + 2) * attack * 60 / defense) / 50) + 2) * random / 255
 
+  const fight = (ownPokemon, encounteredPokemon) => {
+
+  }
+
   return (
-    <> {selectedPokemomon && encounteredPokemon && (
+    <> {ownPokemon && encounteredPokemon && (
       <>
         <div className="ownPoke">
-          <div className="pokeName">{selectedPokemomon.name}</div>
-          {selectedPokemomon.stats.map((stat, index) => (
+          <div className="pokeName">{ownPokemon.name}</div>
+          {ownPokemon.stats.map((stat, index) => (
             <div key={index}>{stat.stat.name}: {stat.base_stat}</div>
           ))}
-          <img className="pokeImage" src={selectedPokemomon.sprites.front_default}></img>
+          <img className="pokeImage" src={ownPokemon.sprites.front_default}></img>
         </div>
         <div className="encounteredPoke">
           <div className="pokeName">{encounteredPokemon.name}</div>
