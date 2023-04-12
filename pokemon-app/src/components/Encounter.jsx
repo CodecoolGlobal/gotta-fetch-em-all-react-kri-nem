@@ -46,7 +46,7 @@ function Encounter ({ onEncounterEnd, selectedPokemonUrl, encounteredPokemonUrl 
           ))}
           <img className="pokeImage" src={encounteredPokemon.sprites.front_default}></img>
         </div>
-        <button onClick={handleClick}>Your turn</button>
+        <button>Your turn</button>
       </>)}
     </>
   )
