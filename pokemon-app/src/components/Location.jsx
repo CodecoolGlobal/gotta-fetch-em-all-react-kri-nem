@@ -28,12 +28,13 @@ function Location({ onOwnPokemonSelect, areaPokemonsUrl, userPokemonsURL }) {
   }, [areaPokemonsUrl]);
 
   function handleCLick (event) {
-    onOwnPokemonSelect(event.target.dataset.url, encounterPokemonUrl)
+    onOwnPokemonSelect(event.currentTarget.dataset.url, encounterPokemonUrl)
   }
 
-  return (<>
+  return (
+  <>
   {encounterPokemon && userPokemons && (<div className='ownPokemons'>
-    {userPokemons.map((pokemon, index) => <div key={index} data-url={userPokemonsURL[{index}]} onClick={handleCLick}>
+    {userPokemons.map((pokemon, index) => <div key={index} data-url={userPokemonsURL[index]} onClick={handleCLick}>
       <div></div> 
     <FightingPokemon   className='own' pokemon={pokemon}/></div>)}
   </div>)}
