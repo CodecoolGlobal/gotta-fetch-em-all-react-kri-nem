@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import WorldItems from "./WorldItems";
-function World() {
+
+function World({onLocationSelect, setDisplayedComponent}) {
   const fetchData = async (url, key) => {
     try {
       const response = await fetch(url);
@@ -16,13 +17,17 @@ function World() {
   async function handleButton(event) {
     event.preventDefault();
     await fetchData(event.target.dataset.url, "areas");
-    console.log(world)
     setChoose(true);
   }
   async function handleBackButton(event) {
     event.preventDefault();
     await fetchData(area, "results");
     setChoose(false);
+  }
+  function sendInfoBack(event) {
+    onLocationSelect(event.target.dataset.url)
+    setDisplayedComponent("Location")
+    console.log(event.target.dataset.url)
   }
   useEffect(() => {
     fetchData(area, "results");
@@ -35,6 +40,7 @@ function World() {
         onBack={handleBackButton}
         onEntered={handleButton}
         showBackButton={chose}
+        onSend={sendInfoBack}
       />
     </div>
   );

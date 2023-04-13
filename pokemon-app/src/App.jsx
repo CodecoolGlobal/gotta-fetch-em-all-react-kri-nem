@@ -5,7 +5,7 @@ import Location from './components/Location'
 import Encounter from './components/Encounter'
 
 function App () {
-  const [displayedComponent, setDisplayedComponent] = useState('Encounter')
+  const [displayedComponent, setDisplayedComponent] = useState('World')
   const [selectedLocationUrl, setSelectedLocationUrl] = useState('')
   const [selectedPokemomonUrl, setSelectedPokemonUrl] = useState('')
   const [encounteredPokemonUrl, setEncounteredPokemonUrl] = useState('')
@@ -34,6 +34,7 @@ function App () {
     activeComponent =
       <World
         onLocationSelect={handleLocationSelect}
+        setDisplayedComponent={setDisplayedComponent}
       />
   } else if (displayedComponent === 'Location') {
     activeComponent =
