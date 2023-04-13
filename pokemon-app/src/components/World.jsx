@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import WorldItems from "./WorldItems";
 
-function World({onLocationSelect, setDisplayedComponent}) {
+function World({ onLocationSelect, setDisplayedComponent }) {
   const fetchData = async (url, key) => {
     try {
       const response = await fetch(url);
@@ -25,9 +25,9 @@ function World({onLocationSelect, setDisplayedComponent}) {
     setChoose(false);
   }
   function sendInfoBack(event) {
-    onLocationSelect(event.target.dataset.url)
-    setDisplayedComponent("Location")
-    console.log(event.target.dataset.url)
+    onLocationSelect(event.target.dataset.url);
+    setDisplayedComponent("Location");
+    console.log(event.target.dataset.url);
   }
   useEffect(() => {
     fetchData(area, "results");
