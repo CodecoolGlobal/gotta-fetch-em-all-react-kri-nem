@@ -79,18 +79,19 @@ function Encounter({
   };
 
   return (
-    <>
+    <div className="Encounter">
       {selectedPokemon && encounteredPokemon && (
         <>
+          {" "}
           <FightingPokemon className="ownPoke" pokemon={selectedPokemon} />
           <FightingPokemon
             className="encounteredPoke"
             pokemon={encounteredPokemon}
           />
+          <button onClick={fight}>Try to catch</button>
         </>
       )}
-      <button onClick={fight}>Try to catch</button>
-    </>
+    </div>
   );
 }
 
