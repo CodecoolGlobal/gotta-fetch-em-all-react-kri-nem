@@ -5,7 +5,7 @@ import Location from './components/Location'
 import Encounter from './components/Encounter'
 
 function App () {
-  const [displayedComponent, setDisplayedComponent] = useState('Encounter')
+  const [displayedComponent, setDisplayedComponent] = useState('Location')
   const [selectedLocationUrl, setSelectedLocationUrl] = useState('')
   const [selectedPokemomonUrl, setSelectedPokemonUrl] = useState('')
   const [encounteredPokemonUrl, setEncounteredPokemonUrl] = useState('')
@@ -39,6 +39,8 @@ function App () {
     activeComponent =
       <Location
         onOwnPokemonSelect={handlePokemonSelect}
+        areaPokemonsUrl="https://pokeapi.co/api/v2/location-area/115/"
+        userPokemons={userPokemons}
       />
   } else if (displayedComponent === 'Encounter') {
     activeComponent =
