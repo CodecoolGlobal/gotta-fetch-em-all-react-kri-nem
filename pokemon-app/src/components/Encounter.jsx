@@ -43,7 +43,6 @@ function Encounter({
       selectedPokemon.stats[0].base_stat > 0 &&
       encounteredPokemon.stats[0].base_stat > 0;
     const isSelectedWinning = encounteredPokemon.stats[0].base_stat <= 0;
-
     if (isSelectedPokemonsTurn && isEncounterRunning) {
       setEncounteredPokemon((draft) => {
         const newHp = Math.round(
