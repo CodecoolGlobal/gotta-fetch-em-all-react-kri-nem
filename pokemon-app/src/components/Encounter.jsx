@@ -43,6 +43,7 @@ function Encounter({
       selectedPokemon.stats[0].base_stat > 0 &&
       encounteredPokemon.stats[0].base_stat > 0;
     const isSelectedWinning = encounteredPokemon.stats[0].base_stat <= 0;
+
     if (isSelectedPokemonsTurn && isEncounterRunning) {
       setEncounteredPokemon((draft) => {
         const newHp = Math.round(
@@ -60,7 +61,7 @@ function Encounter({
       setSelectedPokemon((draft) => {
         const newHp = Math.round(
           draft.stats[0].base_stat -
-            calculateAttack(selectedAttack, encounteredDefense)
+            calculateAttack(encounteredAttack, selectedDefense)
         );
         if (newHp > 0) {
           draft.stats[0].base_stat = newHp;
@@ -78,19 +79,36 @@ function Encounter({
     }
   };
 
+  const selectedPokemonHP = selectedPokemon?.stats[0].base_stat;
+  const encounteredPokemonHP = encounteredPokemon?.stats[0].base_stat;
+
+  const buttonText = (selectedPokemonHP, encounteredPokemonHP) =>
+    selectedPokemonHP && !encounteredPokemonHP
+      ? "Catch & Back to map"
+      : !selectedPokemonHP && encounteredPokemonHP
+      ? "Back to map"
+      : "Fight";
+
   return (
     <div className="Encounter">
+      {selectedPokemonHP && !encounteredPokemonHP && (
+        <div className="win">YOU WIN!</div>
+      )}
+      {!selectedPokemonHP && encounteredPokemonHP && (
+        <div className="lose">YOU LOSE!</div>
+      )}
       {selectedPokemon && encounteredPokemon && (
-        <>
-          {" "}
+        <div className="pokeContainer">
           <FightingPokemon className="ownPoke" pokemon={selectedPokemon} />
           <FightingPokemon
             className="encounteredPoke"
             pokemon={encounteredPokemon}
           />
-          <button onClick={fight}>Try to catch</button>
-        </>
+        </div>
       )}
+      <button onClick={fight}>
+        {buttonText(selectedPokemonHP, encounteredPokemonHP)}
+      </button>
     </div>
   );
 }
