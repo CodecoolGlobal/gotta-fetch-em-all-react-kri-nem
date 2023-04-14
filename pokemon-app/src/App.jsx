@@ -7,7 +7,7 @@ import Encounter from "./components/Encounter";
 function App() {
   const [displayedComponent, setDisplayedComponent] = useState("World");
   const [selectedLocationUrl, setSelectedLocationUrl] = useState("");
-  const [selectedPokemomonUrl, setSelectedPokemonUrl] = useState("");
+  const [selectedPokemonUrl, setSelectedPokemonUrl] = useState("");
   const [encounteredPokemonUrl, setEncounteredPokemonUrl] = useState("");
 
   const [userPokemons, setUserPokemons] = useState([
@@ -23,10 +23,12 @@ function App() {
   function handlePokemonSelect(selectedUrl, encounteredUrl) {
     setSelectedPokemonUrl(selectedUrl);
     setEncounteredPokemonUrl(encounteredUrl);
+    setDisplayedComponent('Encounter')
   }
 
   function handleEncounterEnd(pokeUrl) {
     if (pokeUrl) setUserPokemons([...userPokemons, pokeUrl]);
+    setDisplayedComponent('World');
   }
 
   let activeComponent;
@@ -38,13 +40,19 @@ function App() {
       />
     );
   } else if (displayedComponent === "Location") {
-    activeComponent = <Location onOwnPokemonSelect={handlePokemonSelect} />;
+    activeComponent = (
+      <Location
+        onOwnPokemonSelect={handlePokemonSelect}
+        areaPokemonsUrl={selectedLocationUrl}
+        userPokemonsURL={userPokemons}
+      />
+    );
   } else if (displayedComponent === "Encounter") {
     activeComponent = (
       <Encounter
         onEncounterEnd={handleEncounterEnd}
-        selectedPokemonUrl="https://pokeapi.co/api/v2/pokemon/bulbasaur"
-        encounteredPokemonUrl="https://pokeapi.co/api/v2/pokemon/poliwhirl"
+        selectedPokemonUrl={selectedPokemonUrl}
+        encounteredPokemonUrl={encounteredPokemonUrl}
       />
     );
   }
