@@ -23,12 +23,12 @@ function App() {
   function handlePokemonSelect(selectedUrl, encounteredUrl) {
     setSelectedPokemonUrl(selectedUrl);
     setEncounteredPokemonUrl(encounteredUrl);
-    setDisplayedComponent('Encounter')
+    setDisplayedComponent("Encounter");
   }
 
   function handleEncounterEnd(pokeUrl) {
     if (pokeUrl) setUserPokemons([...userPokemons, pokeUrl]);
-    setDisplayedComponent('World');
+    setDisplayedComponent("World");
   }
 
   let activeComponent;
