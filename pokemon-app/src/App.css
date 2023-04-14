@@ -4,9 +4,10 @@
   padding: 2rem;
   text-align: center;
 }
-html, body {
-  margin:0;
-  height:100%;
+html,
+body {
+  margin: 0;
+  height: 100%;
   width: 100%;
 }
 
@@ -64,7 +65,6 @@ body:has(.Error) {
   color: white;
 }
 
-
 .errorback {
   position: fixed;
   top: 76vh;
@@ -74,7 +74,7 @@ body:has(.Error) {
   color: white;
 }
 
-.errorback:hover{
+.errorback:hover {
   background-color: red;
   color: white;
 }
@@ -93,18 +93,18 @@ body:has(.Error) {
   color: white;
 }
 
-.welcome:has(h2){
+.welcome:has(h2) {
   position: fixed;
   top: 2vh;
   left: 70vh;
   box-shadow: inset 0 0 0 0 #54b3d6;
   color: black;
-  margin: 0 -.25rem;
-  padding: 0 .25rem;
-  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+  margin: 0 -0.25rem;
+  padding: 0 0.25rem;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.welcome:has(h2):hover{
+.welcome:has(h2):hover {
   box-shadow: inset 320px 0 0 0 red;
   color: white;
 }
@@ -114,176 +114,216 @@ body:has(.Error) {
   top: -40vh;
   box-shadow: inset 0 0 0 0 #54b3d6;
   color: black;
-  margin: 0 -.25rem;
-  padding: 0 .25rem;
-  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+  margin: 0 -0.25rem;
+  padding: 0 0.25rem;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-#Error404:has(h2):hover{
+#Error404:has(h2):hover {
   box-shadow: inset 720px 0 0 0 red;
   color: white;
 }
 
 #Area1 {
   position: fixed;
-  top: 17vw; left: 43vw;
+  top: 17vw;
+  left: 43vw;
 }
 #Area2 {
   position: fixed;
-  top: 10vw; left: 22vw;
+  top: 10vw;
+  left: 22vw;
 }
 #Area3 {
   position: fixed;
-  top: 20vw; left: 87vw;
+  top: 20vw;
+  left: 87vw;
 }
 #Area4 {
   position: fixed;
-  top: 27vw; left: 60vw;
+  top: 27vw;
+  left: 60vw;
 }
 #Area5 {
   position: fixed;
-  top: 10vw; left: 42vw;
+  top: 10vw;
+  left: 42vw;
 }
 #Area6 {
   position: fixed;
-  top: 20vw; left: 0vw;
+  top: 20vw;
+  left: 0vw;
 }
 #Area7 {
   position: fixed;
-  top: 10vw; left: 68vw;
+  top: 10vw;
+  left: 68vw;
 }
 #Area8 {
   position: fixed;
-  top: 6vw; left: 65vw;
+  top: 6vw;
+  left: 65vw;
 }
 #Area9 {
   position: fixed;
-  top: 14vw; left: 18vw;
+  top: 14vw;
+  left: 18vw;
 }
 #Area10 {
   position: fixed;
-  top: 10vw; left: 90vw;
+  top: 10vw;
+  left: 90vw;
 }
 #Area11 {
   position: fixed;
-  top: 27vw; left: 80vw;
+  top: 27vw;
+  left: 80vw;
 }
 #Area12 {
   position: fixed;
-  top: 27vw; left: 8vw;
+  top: 27vw;
+  left: 8vw;
 }
 #Area13 {
   position: fixed;
-  top: 10vw; left: 68vw;
+  top: 10vw;
+  left: 68vw;
 }
 #Area14 {
   position: fixed;
-  top: 15vw; left: 78vw;
+  top: 15vw;
+  left: 78vw;
 }
 #Area15 {
   position: fixed;
-  top: 20vw; left: 65vw;
+  top: 20vw;
+  left: 65vw;
 }
 #Area16 {
   position: fixed;
-  top: 13vw; left: 60vw;
+  top: 13vw;
+  left: 60vw;
 }
 #Area17 {
   position: fixed;
-  top: 20vw; left: 20vw;
+  top: 20vw;
+  left: 20vw;
 }
 #Area18 {
   position: fixed;
-  top: 12vw; left: 2vw;
+  top: 12vw;
+  left: 2vw;
 }
 #Area19 {
   position: fixed;
-  top: 30vw; left: 5vw;
+  top: 30vw;
+  left: 5vw;
 }
 #Area20 {
   position: fixed;
-  top: 60vw; left: 38vw;
+  top: 60vw;
+  left: 38vw;
 }
 
 #World1 {
   position: fixed;
-  top: 20vw; left: 43vw;
+  top: 20vw;
+  left: 43vw;
 }
 #World2 {
   position: fixed;
-  top: 2vw; left: 38vw;
+  top: 2vw;
+  left: 38vw;
 }
 #World3 {
   position: fixed;
-  top: 2vw; left: 87vw;
+  top: 2vw;
+  left: 87vw;
 }
 #World4 {
   position: fixed;
-  top: 30vw; left: 32vw;
+  top: 30vw;
+  left: 32vw;
 }
 #World5 {
   position: fixed;
-  top: 40vw; left: 40vw;
+  top: 40vw;
+  left: 40vw;
 }
 #World6 {
   position: fixed;
-  top: 40vw; left: 0vw;
+  top: 40vw;
+  left: 0vw;
 }
 #World7 {
   position: fixed;
-  top: 12vw; left: 68vw;
+  top: 12vw;
+  left: 68vw;
 }
 #World8 {
   position: fixed;
-  top: 2vw; left: 65vw;
+  top: 2vw;
+  left: 65vw;
 }
 #World9 {
   position: fixed;
-  top: 2vw; left: 8vw;
+  top: 2vw;
+  left: 8vw;
 }
 #World10 {
   position: fixed;
-  top: 12vw; left: 90vw;
+  top: 12vw;
+  left: 90vw;
 }
 #World11 {
   position: fixed;
-  top: 30vw; left: 80vw;
+  top: 30vw;
+  left: 80vw;
 }
 #World12 {
   position: fixed;
-  top: 35vw; left: 68vw;
+  top: 35vw;
+  left: 68vw;
 }
 #World13 {
   position: fixed;
-  top: 12vw; left: 29vw;
+  top: 12vw;
+  left: 29vw;
 }
 #World14 {
   position: fixed;
-  top: 40vw; left: 17vw;
+  top: 40vw;
+  left: 17vw;
 }
 #World15 {
   position: fixed;
-  top: 27vw; left: 61vw;
+  top: 27vw;
+  left: 61vw;
 }
 #World16 {
   position: fixed;
-  top: 20vw; left: 24vw;
+  top: 20vw;
+  left: 24vw;
 }
 #World20 {
   position: fixed;
-  top: 20vw; left: 10vw;
+  top: 20vw;
+  left: 10vw;
 }
 #World17 {
   position: fixed;
-  top: 12vw; left: 4vw;
+  top: 12vw;
+  left: 4vw;
 }
 #World18 {
   position: fixed;
-  top: 12vw; left: 50vw;
+  top: 12vw;
+  left: 50vw;
 }
 #World19 {
   position: fixed;
-  top: 37vw; left: 89vw;
+  top: 37vw;
+  left: 89vw;
 }
 .ownPokemons {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -314,13 +354,13 @@ body:has(.Error) {
 
 body:has(.ownPokemons) {
   background-image: url("./components/field.jpg");
-  background-repeat:initial;
+  background-repeat: initial;
   background-size: cover;
   background-position: center;
 }
 
 img.pokeImage {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   padding: 2px 16px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
@@ -353,4 +393,9 @@ body:has(.Encounter) {
   font-size: 40px;
   left: 40%;
   right: 40%;
+}
+
+.ownPokemons,
+.encountered {
+  background-color: rgba(255, 255, 255, 0.9);
 }
