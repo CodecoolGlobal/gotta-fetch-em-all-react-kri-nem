@@ -1,3 +1,5 @@
+# Gotta Fetch 'em All
+
 ![GitHub repo size](https://img.shields.io/github/repo-size/CodecoolGlobal/gotta-fetch-em-all-react-kri-nem)
 ![GitHub language count](https://img.shields.io/github/languages/count/CodecoolGlobal/gotta-fetch-em-all-react-kri-nem)
 ![Static Badge](https://img.shields.io/badge/total%20number%20of%20tracked%20files-22-blue)
